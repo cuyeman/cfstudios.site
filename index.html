@@ -698,7 +698,8 @@
                     <p>Recibe notificaciones exclusivas sobre fechas de Early Access, claves beta cerradas y parches mayores de desarrollo. Cero spam garantizado.</p>
                     <form class="newsletter-form" action="https://formspree.io/f/xdaqlpjo" method="POST">
                         <input type="email" name="email" placeholder="Ingresa tu correo electrónico" required>
-                        <input type="hidden" name="_next" value="https://cfstudios.games/#comunidad">
+                        <!-- Esto le dice a Formspree que los devuelva a tu web con una señal de éxito -->
+                        <input type="hidden" name="_next" value="https://cfstudios.games/?suscripto=ok#comunidad">
                         <button type="submit" class="btn btn-primary">Suscribirse</button>
                     </form>
                 </div>
