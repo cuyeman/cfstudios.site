@@ -5,12 +5,18 @@
     "flag": "🇪🇸"
   },
   "landing": {
+    "bram_banner_kicker": "CAMPFIRE STUDIOS PRESENTA",
+    "bram_banner_title": "BRAM'S FADING LIGHT",
+    "bram_banner_subtitle": "Juega gratis · Próximamente",
+    "bram_banner_button": "PROBAR EL PRÓLOGO",
+    "bram_banner_footer": "Una experiencia narrativa en pixel art.",
     "nav_home": "Inicio",
     "nav_game": "Camp Chaos",
     "nav_prologue": "Bram: Prólogo",
     "nav_studio": "Estudio",
     "nav_devlog": "Devlog",
     "nav_community": "Comunidad",
+    "hero_eyebrow": "Desarrollos Tecnológicos CFStudios SpA",
     "hero_title": "Forjando juegos en la oscuridad.",
     "hero_subtitle": "Desarrollo independiente centrado en la supervivencia, el caos y mecánicas sociales impredecibles.",
     "steam_button": "Añadir a Wishlist en Steam",

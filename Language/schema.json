@@ -1,6 +1,11 @@
 {
   "_comment": "Define qué llaves debe tener cada archivo de idioma. Generado desde es.json como referencia estructural inicial.",
   "landing": [
+    "bram_banner_kicker",
+    "bram_banner_title",
+    "bram_banner_subtitle",
+    "bram_banner_button",
+    "bram_banner_footer",
     "about_heading",
     "about_heading_accent",
     "about_tagline",

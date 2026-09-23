@@ -5,12 +5,20 @@
     "flag": "🇮🇳"
   },
   "landing": {
+    
+
+    "bram_banner_kicker": "CAMPFIRE STUDIOS प्रस्तुत करता है",
+    "bram_banner_title": "BRAM'S FADING LIGHT",
+    "bram_banner_subtitle": "मुफ़्त खेलें · जल्द आ रहा है",
+    "bram_banner_button": "प्रस्तावना खेलें",
+    "bram_banner_footer": "पिक्सेल आर्ट में एक कथात्मक अनुभव।",
     "nav_home": "होम",
     "nav_game": "Camp Chaos",
     "nav_prologue": "ब्रैम: प्रस्तावना",
     "nav_studio": "स्टूडियो",
     "nav_devlog": "Devlog",
     "nav_community": "समुदाय",
+    "hero_eyebrow":"CFStudios SpA टेक डेवलपमेंट्स",
     "hero_title": "अंधेरे में खेल गढ़ना।",
     "hero_subtitle": "जीवन रक्षा, अराजकता और अप्रत्याशित सामाजिक तंत्रों पर केंद्रित स्वतंत्र गेम डेवलपमेंट।",
     "steam_button": "Steam पर विशलिस्ट में जोड़ें",
