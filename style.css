@@ -95,7 +95,7 @@
 
         header {
             position: fixed; top: 0; left: 0; width: 100%;
-            background-color: rgba(10, 10, 12, 0.95);
+            background-color: rgba(10, 10, 12, 0.75);
             backdrop-filter: blur(8px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
@@ -1116,3 +1116,173 @@
             animation: none;
         }
     }
+    
+    
+    /* Fondo general del sitio */
+    html {
+        min-height: 100%;
+        background: #05070b;
+    }
+
+    body {
+        position: relative;
+        isolation: isolate;
+        min-height: 100vh;
+        margin: 0;
+        background: #05070b;
+    }
+
+    /* Bosque fijo detrás del contenido */
+    body::before {
+        content: "";
+        position: fixed;
+        inset: 0;
+        z-index: -1;
+        pointer-events: none;
+
+        background-image:
+            linear-gradient(
+                to bottom,
+                rgba(3, 5, 10, 0.18),
+                rgba(3, 5, 10, 0.08) 65%,
+                rgba(3, 5, 10, 0.22)
+            ),
+            url("imagenes/fondo-bosque.png");
+
+        background-repeat: no-repeat;
+        background-position: center top;
+        background-size: 100% 100%;
+    }
+
+    /* Permite que se vea el fondo detrás del contenido */
+    main,
+    section {
+        background-color: transparent;
+    }
+
+
+html {
+    min-height: 100%;
+    background-color: #05070b;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #05070b;
+    background-image:
+        linear-gradient(
+            180deg,
+            rgba(3, 5, 10, 0.24) 0%,
+            rgba(3, 5, 10, 0.16) 45%,
+            rgba(3, 5, 10, 0.30) 100%
+        ),
+        url("./imagenes/fondo.png");
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: 100% 100%;
+    background-attachment: scroll;
+}
+
+/* Secciones: dejan ver el bosque, con un velo oscuro */
+.hero {
+    background: rgba(5, 7, 11, 0.28);
+}
+
+.about-section,
+.prologue-section,
+.presskit-section,
+.contact-section {
+    background-color: rgba(20, 20, 24, 0.72);
+}
+
+.game-section,
+.devlog-section,
+.community-section {
+    background-color: rgba(10, 10, 12, 0.62);
+}
+
+/* Tarjetas con mayor opacidad para facilitar la lectura */
+.about-card,
+.devlog-card,
+.contact-form {
+    background-color: rgba(28, 28, 34, 0.84);
+    -webkit-backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px);
+}
+
+.community-box {
+    background-color: rgba(20, 20, 24, 0.50);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+}
+
+.newsletter-form input[type="email"],
+.contact-form input,
+.contact-form textarea {
+    background-color: rgba(5, 7, 11, 0.88);
+}
+
+/* Elementos que deben conservar contraste */
+header {
+    background-color: rgba(10, 10, 12, 0.94);
+    -webkit-backdrop-filter: blur(10px);
+    backdrop-filter: blur(10px);
+}
+
+footer {
+    background-color: rgba(5, 5, 6, 0.88);
+}
+
+.bram-modal-card {
+    background-color: #17171d;
+}
+
+/* Ajustes para móviles */
+@media (max-width: 768px) {
+    .about-section,
+    .prologue-section,
+    .presskit-section,
+    .contact-section {
+        background-color: rgba(20, 20, 24, 0.78);
+    }
+
+    .game-section,
+    .devlog-section,
+    .community-section {
+        background-color: rgba(10, 10, 12, 0.70);
+    }
+
+    .about-card,
+    .devlog-card,
+    .contact-form {
+        background-color: rgba(28, 28, 34, 0.90);
+    }
+}
+/* Animación de aparición al hacer scroll */
+[data-reveal] {
+    opacity: 0;
+    filter: blur(12px);
+    transform: translateY(35px);
+
+    transition:
+        opacity 0.8s ease,
+        filter 0.8s ease,
+        transform 0.8s ease;
+}
+
+/* Estado visible */
+[data-reveal].is-visible {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateY(0);
+}
+
+/* Accesibilidad: reducir movimiento */
+@media (prefers-reduced-motion: reduce) {
+    [data-reveal] {
+        opacity: 1;
+        filter: none;
+        transform: none;
+        transition: none;
+    }
+}

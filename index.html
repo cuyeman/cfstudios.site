@@ -29,15 +29,14 @@
         aria-labelledby="bramModalTitle"
         aria-hidden="true">
 
-        <div class="bram-modal-card">
+    <div class="bram-modal-card">
 
-            <!-- Botón para cerrar -->
-            <button class="bram-modal-close" id="bramModalClose"
-                    type="button" aria-label="Cerrar">&times;</button>
-
-            <!-- Cabecera gris: nombre de la empresa -->
-            <div class="bram-modal-header">
-                <p class="bram-modal-kicker"
+        <!-- Botón para cerrar -->
+        <button class="bram-modal-close" id="bramModalClose"
+            type="button" aria-label="Cerrar">&times;</button>
+        <!-- Cabecera gris: nombre de la empresa -->
+        <div class="bram-modal-header" data-reveal>
+        <p class="bram-modal-kicker"
                 data-i18n="landing.bram_banner_kicker">
                     CAMPFIRE STUDIOS PRESENTA
                 </p>
@@ -133,13 +132,13 @@
                 <span class="hero-eyebrow" data-i18n="landing.hero_eyebrow">Desarrollos Tecnológicos CFStudios SpA</span>
                 <h1 class="hero-title" data-i18n="landing.hero_title">Forjando juegos en la oscuridad.</h1>
                 <p class="hero-subtitle" data-i18n="landing.hero_subtitle">Desarrollo independiente centrado en la supervivencia, el caos y mecánicas sociales impredecibles.</p>
+                <div class="hero-banner-container">
+                    <img src="imagenes/Fondo-kv.jpeg" alt="Arte conceptual / Tráiler principal">
+                </div>
+                <br>
                 <div class="hero-actions">
                     <a href="#wishlist" class="btn btn-primary" data-i18n="landing.steam_button">Añadir a Wishlist en Steam</a>
                     <a href="#bram-fading-light" class="btn btn-secondary" data-i18n="landing.prologue_cta_play">Jugar el Prólogo</a>
-                </div>
-
-                <div class="hero-banner-container">
-                    <img src="imagenes/Fondo-kv.jpeg" alt="Arte conceptual / Tráiler principal">
                 </div>
             </div>
         </div>
@@ -149,7 +148,7 @@
     <section id="nosotros" class="about-section section-padding">
         <div class="container">
             <h2 class="section-title"><span class="ti-plain" data-i18n="landing.about_heading">Sobre</span> <span data-i18n="landing.about_heading_accent">Campfire Studios</span></h2>
-            <div class="about-card">
+            <div class="about-card" data-reveal>
                 <p class="about-tagline" data-i18n="landing.about_tagline">Hecho por Jugadores, Diseñado por Profesionales.</p>
                 <p class="about-text" data-i18n="landing.about_text">En Campfire Studios combinamos dos mundos fundamentales: la precisión de la ingeniería informática y una vida entera frente a una pantalla. Somos un equipo de profesionales de la tecnología que juega desde la infancia; llevamos décadas acumulando horas de vuelo en todo tipo de géneros, mecánicas y plataformas. Esa experiencia vivida como jugadores es nuestro mayor activo: entendemos qué frustra a la comunidad, qué genera adicción sana y qué hace que una partida con amigos sea inolvidable. Bajo un modelo de desarrollo ágil e iterativo (Fail Fast), transformamos esa intuición gamer y nuestro dominio técnico en experiencias accesibles, caóticas y con una alta rejugabilidad.</p>
             </div>
@@ -171,7 +170,7 @@
                     </ul>
                     <a href="#presskit" class="btn btn-secondary" data-i18n="landing.game_cta_explore">Explorar más</a>
                 </div>
-                <div class="game-media">
+                <div class="game-media" data-reveal>
                     <!--
                         📂 SUBE AQUÍ el material de Camp Chaos:
                         Reemplaza esta imagen o agrega más dentro de imagenes/camp-chaos/
@@ -260,18 +259,18 @@
     <section id="devlog" class="devlog-section section-padding">
         <div class="container">
             <h2 class="section-title"><span class="ti-plain" data-i18n="landing.devlog_heading">Blog de</span> <span data-i18n="landing.devlog_heading_accent">Desarrollo</span></h2>
-            <div class="devlog-grid">
-                <article class="devlog-card">
+            <div class="devlog-grid" data-reveal>
+                <article class="devlog-card" data-reveal>
                     <span class="devlog-tag" data-i18n="landing.devlog_card1_tag">Actualización Pre-Alpha</span>
                     <h4 data-i18n="landing.devlog_card1_title">Sistema de Clima Dinámico</h4>
                     <p data-i18n="landing.devlog_card1_text">Implementamos tormentas aleatorias que afectan la visibilidad y apagan gradualmente fuentes de luz secundarias. La comunicación ahora es más vital que nunca.</p>
                 </article>
-                <article class="devlog-card">
+                <article class="devlog-card" data-reveal>
                     <span class="devlog-tag" data-i18n="landing.devlog_card2_tag">Notas del Parche 0.8.2</span>
                     <h4 data-i18n="landing.devlog_card2_title">Optimización de Red y Matchmaking</h4>
                     <p data-i18n="landing.devlog_card2_text">Reescribimos la capa de red para asegurar que el sabotaje y las acciones de los jugadores se registren sin latencia notable, incluso en conexiones inestables.</p>
                 </article>
-                <article class="devlog-card">
+                <article class="devlog-card" data-reveal>
                     <span class="devlog-tag" data-i18n="landing.devlog_card3_tag">Detrás de Escenas</span>
                     <h4 data-i18n="landing.devlog_card3_title">Diseño Sonoro del Bosque</h4>
                     <p data-i18n="landing.devlog_card3_text">Un desglose técnico sobre cómo utilizamos audio espacial en 3D para generar tensión psicológica cuando los jugadores se alejan del campamento base.</p>
@@ -282,7 +281,7 @@
 
     <!-- PRESS KIT -->
     <section id="presskit" class="presskit-section section-padding">
-        <div class="container">
+        <div class="container" data-reveal>
             <h2 class="section-title"><span class="ti-plain" data-i18n="landing.presskit_heading">Kit de</span> <span data-i18n="landing.presskit_heading_accent">Prensa</span></h2>
             <div class="presskit-content">
                 <p data-i18n="landing.presskit_text">¿Eres creador de contenido o periodista? Descarga nuestro dossier completo. Incluye: logotipos oficiales con fondo transparente, hojas de datos técnicos del juego (Fact Sheet) y artes conceptuales.</p>
@@ -293,7 +292,7 @@
 
     <!-- COMUNIDAD Y REDES SOCIALES -->
     <section id="comunidad" class="community-section section-padding">
-        <div class="container">
+        <div class="container" data-reveal>
             <div class="community-grid">
                 <div class="community-box">
                     <h3 data-i18n="landing.community_newsletter_title">Únete a nuestro Boletín</h3>
@@ -334,7 +333,7 @@
 
     <!-- CONTACTO Y FOOTER -->
     <section class="contact-section section-padding">
-        <div class="container">
+        <div class="container" data-reveal>
             <h2 class="section-title"><span class="ti-plain" data-i18n="landing.contact_heading">Contacto</span> <span data-i18n="landing.contact_heading_accent">Comercial</span></h2>
             <div class="contact-form">
                 <form action="https://formspree.io/f/xvzebvge" method="POST">
@@ -427,6 +426,7 @@
         });
     });
     </script>
+    <script src="src/scroll-reveal.js"></script>
 
 </body>
 </html>
