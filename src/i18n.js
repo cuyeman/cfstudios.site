@@ -37,6 +37,20 @@ function resolveKey(translations, key) {
         return undefined;
     }
 }
+const bramImages = {
+    es: "imagenes/en-construccionES.png",
+    en: "imagenes/en-construccionEN.png",
+    pt: "imagenes/en-construccionPT.png",
+    hi: "imagenes/en-construccionHI.png"
+};
+
+function updateBramConstructionImage(lang) {
+    const image = document.getElementById("bramConstructionImage");
+
+    if (!image) return;
+
+    image.src = bramImages[lang] || bramImages.es;
+}
 
 async function loadLanguage(lang) {
     try {
@@ -104,6 +118,7 @@ function setLanguage(lang) {
     }
 
     loadLanguage(lang);
+    updateBramConstructionImage(lang);
 }
 
 document.addEventListener("DOMContentLoaded", () => {
