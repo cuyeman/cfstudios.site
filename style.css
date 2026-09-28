@@ -782,7 +782,7 @@
     ========================================= */
 
     .bram-modal-card {
-        width: min(920px, 100%);
+        width: min(820px, 100%);
         border-radius: 18px;
         overflow: hidden;
         background: #17171d;
