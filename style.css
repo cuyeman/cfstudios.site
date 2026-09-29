@@ -516,7 +516,7 @@
 
     .bram-modal-kicker {
         margin: 0 0 18px;
-        font-family: "Alkhemikal";
+        font-family: var(--font-headings);
         color: var(--fire-amber);
         font-size: clamp(0.58rem, 1.5vw, 0.8rem);
         font-weight: 800;
@@ -530,11 +530,11 @@
         margin: 0;
 
         font-family: "Datafont";
-        font-size: clamp(1.8rem, 5.2vw, 4rem);
+        font-size: clamp(2rem, 5.5vw, 4.5rem);
         font-weight: normal;
         line-height: 1.1;
 
-        color: #f0f0f5;
+        color: #fff;
         text-align: center;
         overflow-wrap: break-word;
 
@@ -548,6 +548,8 @@
         font-size: clamp(1rem, 2.2vw, 1.3rem);
         font-weight: 600;
         line-height: 1.35;
+        text-align: center;
+        letter-spacing: 0.18em;
     }
 
     /* Entrada suave del contenido */
@@ -782,7 +784,7 @@
     ========================================= */
 
     .bram-modal-card {
-        width: min(820px, 100%);
+        width: min(660px, 100%);
         border-radius: 18px;
         overflow: hidden;
         background: #17171d;
@@ -846,20 +848,27 @@
     .bram-modal-video-wrap {
         position: relative;
         width: 100%;
-        aspect-ratio: 16 / 9;
+        
         overflow: hidden;
         border-radius: 0;
-        background: #080a0f;
+        background: transparent;
     }
 
     .bram-modal-video {
         position: absolute;
-        inset: 0;
+        top: 50%;
+        left: 50%;
+
         width: 100%;
         height: 100%;
+
         object-fit: cover;
-        object-position: center;
-    }
+        object-position: center center;
+
+        transform:translate(-50.7%, -50%) scale(1.20);
+
+        display: block;
+        }
 
     /* Oscurecimiento gradual para los textos */
     .bram-modal-overlay {
@@ -894,20 +903,30 @@
 
     /* Título en la parte superior */
     .bram-modal-content h2 {
-        margin: 0;
-        max-width: 100%;
+            position: absolute;
 
-        font-family: "Datafont", serif;
-        font-size: clamp(2rem, 5.5vw, 4.5rem);
-        font-weight: normal;
-        line-height: 1.08;
-        color: #ffc83d;
+            top: 50%;
+            left: 50%;
 
-        text-shadow:
-            0 2px 2px #17100a,
-            0 0 12px rgba(255, 166, 35, 0.75),
-            0 0 30px rgba(255, 107, 53, 0.5);
-    }
+            transform: translate(-50%, -50%);
+
+            width: 100%;
+            margin: 0;
+
+            font-family: "Datafont";
+            font-size: 60px;
+            font-weight: 800;
+            line-height: 1.08;
+
+            color: #f3eaeaf7;
+            text-align: center;
+
+            text-shadow:
+                0 0 5px #ffd34e,
+                0 0 12px #53410e,
+                0 0 25px rgba(0, 0, 0, 0.9),
+                0 0 45px rgba(0, 0, 0, 0.65);
+        }
 
     /* Texto casi al borde inferior del video */
     .bram-modal-subtitle {
@@ -915,10 +934,10 @@
         padding-top: 18px;
 
         color: #fff1c9;
-        font-size: clamp(0.85rem, 2vw, 1.2rem);
+        font-size: 20px;
         font-weight: 700;
-        line-height: 1.4;
-
+        line-height: 2;
+        font-family: "Datafont";
         text-shadow: 0 2px 10px #000;
     }
 
@@ -988,10 +1007,10 @@
 
     /* Descripción debajo del botón */
     .bram-modal-description {
-        font-family: "Alkhemikal";
+        font-family: var(--font-headings);
         margin: 0;
-        color: var(--text-muted);
-        font-size: 0.9rem;
+        color:#ff6b35 ;
+        font-size: clamp(0.75rem, 2vw, 1rem);
         text-align: center;
     }
 
@@ -1014,47 +1033,64 @@
 
         .bram-modal-card {
             width: 100%;
+            max-width: 660px;
             border-radius: 14px;
         }
 
+        /* CABECERA */
         .bram-modal-header {
             min-height: 58px;
             padding: 14px 48px 14px 12px;
         }
 
         .bram-modal-kicker {
-            font-size: 1rem;
-            letter-spacing: 0.1em;
+            font-size: clamp(0.75rem, 3.5vw, 1rem);
+            letter-spacing: 0.10em;
+            white-space: nowrap;
         }
 
+        /* VIDEO */
+        .bram-modal-video-wrap {
+            aspect-ratio: 16 / 9;
+        }
+
+        /* CONTENIDO DEL VIDEO */
         .bram-modal-content {
             padding: 24px 12px 12px;
         }
 
+        /* TÍTULO */
         .bram-modal-content h2 {
-            font-size: clamp(1.3rem, 6vw, 2.2rem);
+            font-size: clamp(1.3rem, 7vw, 2.5rem);
+            line-height: 1.1;
+            width: 95%;
         }
 
+        /* SUBTÍTULO DEL VIDEO */
         .bram-modal-subtitle {
-            font-size: clamp(0.65rem, 3vw, 0.9rem);
+            font-size: clamp(0.75rem, 3.2vw, 1rem);
+            letter-spacing: 0.12em;
+            line-height: 1.4;
             padding-top: 10px;
         }
 
-        .bram-modal-footer {
-            padding: 16px 12px;
-            gap: 10px;
-        }
-
+        /* BOTÓN */
         .bram-modal-cta {
+            width: min(360px, 90%);
             min-height: 52px;
             padding: 12px 16px;
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 3.5vw, 1rem);
         }
 
+        /* TEXTO DEBAJO DEL BOTÓN */
         .bram-modal-description {
-            font-size: 1.75rem;
+            font-size: clamp(0.75rem, 3vw, 1rem);
+            line-height: 1.4;
+            margin: 0;
+            text-align: center;
         }
 
+        /* CERRAR */
         .bram-modal-close {
             top: 10px;
             right: 10px;
