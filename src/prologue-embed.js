@@ -1,20 +1,18 @@
 /**
  * src/prologue-embed.js
  * Controla el botón "Pantalla completa" del reproductor embebido del Prólogo.
- * No hace nada si el iframe todavía no existe (mientras esté el placeholder),
- * así que es seguro dejarlo cargado desde ya.
+ * Usa delegación de eventos porque el iframe se crea después, cuando
+ * src/beta-gate.js carga el juego; mientras no exista, no hace nada.
  */
-document.addEventListener('DOMContentLoaded', () => {
-    const btn = document.getElementById('embedFullscreenBtn');
+document.addEventListener('click', (event) => {
+    if (!event.target.closest('#embedFullscreenBtn')) return;
+
     const iframe = document.getElementById('prologueIframe');
+    if (!iframe) return; // el reproductor real aún no está activado
 
-    if (!btn || !iframe) return; // el reproductor real aún no está activado
-
-    btn.addEventListener('click', () => {
-        if (iframe.requestFullscreen) {
-            iframe.requestFullscreen();
-        } else if (iframe.webkitRequestFullscreen) {
-            iframe.webkitRequestFullscreen();
-        }
-    });
+    if (iframe.requestFullscreen) {
+        iframe.requestFullscreen();
+    } else if (iframe.webkitRequestFullscreen) {
+        iframe.webkitRequestFullscreen();
+    }
 });

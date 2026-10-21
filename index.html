@@ -246,6 +246,33 @@
                     acompañarás a Bram en sus últimas horas antes de que la luz se apague.
                 </p>
 
+                <!-- BETA PRIVADA: la clave cambia cada día y solo se publica en Discord -->
+                <div class="beta-gate" id="betaGate">
+                    <button type="button" class="btn btn-primary" id="betaPlayBtn"
+                        data-i18n="landing.beta_play_button">
+                        Jugar la beta privada
+                    </button>
+
+                    <form class="beta-form" id="betaForm" hidden>
+                        <label for="betaPassword" data-i18n="landing.beta_password_label">Clave del día</label>
+                        <div class="beta-form-row">
+                            <input type="text" id="betaPassword" name="password"
+                                autocomplete="off" autocapitalize="characters" spellcheck="false" required
+                                data-i18n="landing.beta_password_placeholder"
+                                placeholder="Ej: FOGATA-1234">
+                            <button type="submit" class="btn btn-primary"
+                                data-i18n="landing.beta_submit_button">Entrar</button>
+                        </div>
+                        <div class="cf-turnstile" data-sitekey="0x4AAAAAAD7m_cGzPFlLO8Q7" data-theme="dark"></div>
+                        <p class="beta-error" id="betaError" role="alert" hidden></p>
+                    </form>
+
+                    <p class="beta-hint">
+                        <span data-i18n="landing.beta_hint">La clave cambia cada día y se publica solo en nuestro Discord.</span>
+                        <span class="beta-soon" data-i18n="landing.beta_discord_link">Muy pronto disponible</span>
+                    </p>
+                </div>
+
                 </div>
 
             </div>
@@ -260,19 +287,20 @@
             <h2 class="section-title"><span class="ti-plain" data-i18n="landing.devlog_heading">Blog de</span> <span data-i18n="landing.devlog_heading_accent">Desarrollo</span></h2>
             <div class="devlog-grid" data-reveal>
                 <article class="devlog-card" data-reveal>
-                    <span class="devlog-tag" data-i18n="landing.devlog_card1_tag">Actualización Pre-Alpha</span>
-                    <h4 data-i18n="landing.devlog_card1_title">Sistema de Clima Dinámico</h4>
-                    <p data-i18n="landing.devlog_card1_text">Implementamos tormentas aleatorias que afectan la visibilidad y apagan gradualmente fuentes de luz secundarias. La comunicación ahora es más vital que nunca.</p>
+                    <span class="devlog-tag" data-i18n="landing.devlog_card1_tag">En Desarrollo</span>
+                    <h4 data-i18n="landing.devlog_card1_title">Camp Chaos toma forma</h4>
+                    <p data-i18n="landing.devlog_card1_text">Seguimos trabajando a fondo en el desarrollo de Camp Chaos: nuevas mecánicas, mapas y sistemas de juego para que cada partida en el campamento sea un caos inolvidable.</p>
                 </article>
                 <article class="devlog-card" data-reveal>
-                    <span class="devlog-tag" data-i18n="landing.devlog_card2_tag">Notas del Parche 0.8.2</span>
-                    <h4 data-i18n="landing.devlog_card2_title">Optimización de Red y Matchmaking</h4>
-                    <p data-i18n="landing.devlog_card2_text">Reescribimos la capa de red para asegurar que el sabotaje y las acciones de los jugadores se registren sin latencia notable, incluso en conexiones inestables.</p>
+                    <span class="devlog-tag" data-i18n="landing.devlog_card2_tag">Recta Final</span>
+                    <h4 data-i18n="landing.devlog_card2_title">Últimos detalles de Bram's Fading Light</h4>
+                    <p data-i18n="landing.devlog_card2_text">Estamos en la etapa de finalización de Bram's Fading Light, puliendo la jugabilidad, corrigiendo errores y afinando cada detalle antes de su lanzamiento.</p>
                 </article>
                 <article class="devlog-card" data-reveal>
-                    <span class="devlog-tag" data-i18n="landing.devlog_card3_tag">Detrás de Escenas</span>
-                    <h4 data-i18n="landing.devlog_card3_title">Diseño Sonoro del Bosque</h4>
-                    <p data-i18n="landing.devlog_card3_text">Un desglose técnico sobre cómo utilizamos audio espacial en 3D para generar tensión psicológica cuando los jugadores se alejan del campamento base.</p>
+                    <span class="devlog-tag" data-i18n="landing.devlog_card3_tag">Comunidad</span>
+                    <h4 data-i18n="landing.devlog_card3_title">Síguenos en Redes Sociales</h4>
+                    <p data-i18n="landing.devlog_card3_text">Estamos impulsando nuestras redes sociales para compartir avances, contenido exclusivo y novedades del estudio. ¡Síguenos y sé parte de la comunidad de Campfire Studios!</p>
+                    <a href="https://discord.gg/hKCMGGHBN" class="devlog-link" target="_blank" rel="noopener" data-i18n="landing.devlog_card3_link">Únete a nuestro Discord →</a>
                 </article>
             </div>
         </div>
@@ -369,6 +397,7 @@
 
     <script src="src/i18n.js"></script>
     <script src="src/prologue-embed.js"></script>
+    <script src="src/beta-gate.js"></script>
     
     <script>
     document.addEventListener("DOMContentLoaded", () => {
