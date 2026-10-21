@@ -284,6 +284,28 @@
             border-radius: 20px; cursor: pointer; transition: var(--transition);
         }
         .embed-fullscreen-btn:hover { background: var(--fire-main); color: #000; border-color: var(--fire-main); }
+
+        /* Beta privada: formulario de la clave del día */
+        .beta-gate { display: flex; flex-direction: column; align-items: center; gap: 1rem; margin-top: 1rem; }
+        .beta-gate [hidden] { display: none !important; }
+        .beta-form { width: 100%; max-width: 460px; display: flex; flex-direction: column; align-items: center; gap: 0.75rem; }
+        .beta-form label { font-family: var(--font-headings); font-weight: 800; color: var(--text-main); }
+        .beta-form-row { display: flex; gap: 0.75rem; width: 100%; }
+        .beta-form input {
+            flex: 1; min-width: 0; padding: 14px 20px; background-color: var(--bg-surface-alt);
+            border: 1px solid rgba(255, 255, 255, 0.1); color: var(--text-main);
+            border-radius: 4px; font-family: var(--font-body); font-size: 1rem;
+            text-transform: uppercase; letter-spacing: 1px;
+        }
+        .beta-form input::placeholder { text-transform: none; letter-spacing: normal; }
+        .beta-form input:focus { outline: none; border-color: var(--fire-main); }
+        .beta-form button:disabled { opacity: 0.6; cursor: wait; }
+        .beta-error { color: var(--fire-main); font-size: 0.95rem; }
+        .beta-hint { font-size: 0.9rem; color: var(--text-muted); }
+        .beta-hint a, .beta-hint .beta-soon { color: var(--fire-amber); font-weight: 600; margin-left: 0.25rem; }
+        @media (max-width: 480px) {
+            .beta-form-row { flex-direction: column; }
+        }
         @media (min-width: 993px) {
             .prologue-embed { min-height: 560px; }
         }
@@ -301,6 +323,8 @@
         }
         .devlog-card h4 { font-size: 1.4rem; margin-bottom: 1rem; }
         .devlog-card p { color: var(--text-muted); font-size: 0.95rem; }
+        .devlog-link { display: inline-block; margin-top: 1.25rem; font-weight: 700; color: var(--fire-amber); text-decoration: none; }
+        .devlog-link:hover { text-decoration: underline; }
 
         .presskit-section { background-color: var(--bg-surface); text-align: center; }
         .presskit-content { max-width: 700px; margin: 0 auto; }

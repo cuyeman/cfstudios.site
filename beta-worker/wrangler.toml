@@ -1,0 +1,17 @@
+name = "cfstudios-beta"
+main = "src/index.js"
+compatibility_date = "2026-09-01"
+
+# El Worker solo atiende /beta/*; el resto del sitio sigue saliendo de GitHub Pages.
+routes = [
+    { pattern = "cfstudios.games/beta/*", zone_name = "cfstudios.games" }
+]
+
+# Bucket privado con los archivos del juego (index.html en la raíz del bucket).
+[[r2_buckets]]
+binding = "GAME_BUCKET"
+bucket_name = "cfstudios-beta-game"
+
+# 03:00 y 04:00 UTC = 00:00 en Chile en horario de verano e invierno.
+[triggers]
+crons = ["0 3 * * *", "0 4 * * *"]
