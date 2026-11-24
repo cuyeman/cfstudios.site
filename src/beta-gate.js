@@ -13,7 +13,16 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!playBtn || !form || !embed) return;
 
-    const GAME_URL = '/beta/game/';
+    // false: el juego es público y se carga directo desde la carpeta prologo/ del sitio.
+    // true:  pide la clave del día y lo carga desde el Worker de Cloudflare (beta-worker/),
+    //        que debe estar desplegado. OJO: mientras exista la carpeta prologo/ en el repo,
+    //        cualquiera puede abrirla por URL directa aunque aquí se pida clave.
+    const REQUIRE_KEY = true;
+    const GAME_URL = REQUIRE_KEY ? '/beta/game/' : 'prologo/';
+
+    // Sin clave, el texto "la clave cambia cada día..." no aplica.
+    const hint = document.querySelector('#betaGate .beta-hint');
+    if (!REQUIRE_KEY && hint) hint.hidden = true;
 
     // Textos dinámicos: usa el idioma activo de i18n.js y cae al español si falta la llave.
     const fallback = {
@@ -64,8 +73,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     playBtn.addEventListener('click', async () => {
-        // Si ya ingresó la clave hoy, el juego carga directo sin volver a pedirla.
-        if (await alreadyUnlocked()) {
+        // Sin clave, o si ya la ingresó hoy, el juego carga directo.
+        if (!REQUIRE_KEY || await alreadyUnlocked()) {
             loadGame();
             return;
         }
