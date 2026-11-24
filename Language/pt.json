@@ -80,7 +80,11 @@
     "contact_email_label": "E-mail",
     "contact_message_label": "Mensagem / Relatório",
     "contact_submit_button": "Enviar Mensagem",
-    "footer_legal": "© 2026 Desarrollos Tecnológicos CFStudios SpA. Santiago, Região Metropolitana, Chile."
+    "footer_legal": "© 2026 Desarrollos Tecnológicos CFStudios SpA. Santiago, Região Metropolitana, Chile.",
+    "consent_text": "Usamos cookies do Google Analytics para entender como o site é usado e melhorá-lo. Eles só são ativados se você aceitar; você pode mudar sua decisão a qualquer momento no rodapé.",
+    "consent_accept": "Aceitar",
+    "consent_reject": "Recusar",
+    "consent_manage": "Preferências de cookies"
   },
   "prologo": {
     "acto1_title": "ATO 1 — A VISITA DE EDWIN",

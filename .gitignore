@@ -1,0 +1,11 @@
+# Secretos y archivos locales: nunca al repo (GitHub Pages publica todo lo que se sube)
+.env
+.env.*
+.dev.vars
+.wrangler/
+node_modules/
+
+# Builds del juego: van al bucket R2 privado, no al repo
+build/
+dist/
+game-build/

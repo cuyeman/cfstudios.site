@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 /**
  * validate-locales.js
- * Compara los 4 archivos de Lenguague/*.json contra schema.json.
+ * Compara los 4 archivos de Language/*.json contra schema.json.
  * Uso: node validate-locales.js
  * Sale con código 1 si falta alguna llave (útil como paso de build/CI antes del PR).
  */
@@ -9,7 +9,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const LOCALE_DIR = path.join(__dirname, 'Lenguague');
+const LOCALE_DIR = path.join(__dirname, 'Language');
 const SCHEMA_PATH = path.join(LOCALE_DIR, 'schema.json');
 const LANGS = ['es', 'en', 'pt', 'hi'];
 
@@ -24,7 +24,7 @@ function loadJSON(filePath) {
 }
 
 function main() {
-  console.log('🔍 Validando Lenguague/*.json contra schema.json...\n');
+  console.log('🔍 Validando Language/*.json contra schema.json...\n');
 
   const schema = loadJSON(SCHEMA_PATH);
   let hasErrors = false;
