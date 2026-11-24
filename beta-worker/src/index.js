@@ -192,7 +192,13 @@ async function handleGameFile(request, env, path) {
         );
     }
 
-    let key = decodeURIComponent(path.replace(/^\/beta\/game\/?/, ''));
+    let key;
+    try {
+        key = decodeURIComponent(path.replace(/^\/beta\/game\/?/, ''));
+    } catch {
+        // URL mal codificada (ej. "%E0%A4"): se responde 404 en vez de un error 500.
+        return new Response('Not found', { status: 404 });
+    }
     if (key === '' || key.endsWith('/')) key += 'index.html';
     if (key.split('/').includes('..')) return new Response('Not found', { status: 404 });
 
@@ -209,6 +215,9 @@ async function handleGameFile(request, env, path) {
     // "private": solo el navegador del jugador guarda copia, nunca un caché compartido.
     headers.set('Cache-Control', 'private, max-age=3600');
     headers.set('X-Robots-Tag', 'noindex');
+    headers.set('X-Content-Type-Options', 'nosniff');
+    // El juego solo puede mostrarse embebido dentro del propio sitio.
+    headers.set('Content-Security-Policy', "frame-ancestors 'self'");
 
     return new Response(object.body, { headers });
 }
@@ -240,6 +249,11 @@ export default {
     async fetch(request, env) {
         const { pathname } = new URL(request.url);
 
+        // Sin secretos configurados la clave sería predecible: mejor cerrar todo.
+        if (!env.BETA_SECRET || env.BETA_SECRET.length < 32 || !env.TURNSTILE_SECRET) {
+            return new Response('Beta no disponible', { status: 503 });
+        }
+
         if (pathname === '/beta/unlock' && request.method === 'POST') {
             return handleUnlock(request, env);
         }
@@ -248,7 +262,7 @@ export default {
             return json({ unlocked: await hasAccess(request, env) });
         }
 
-        if (pathname.startsWith('/beta/game') && request.method === 'GET') {
+        if ((pathname === '/beta/game' || pathname.startsWith('/beta/game/')) && request.method === 'GET') {
             return handleGameFile(request, env, pathname);
         }
 

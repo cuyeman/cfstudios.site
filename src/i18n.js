@@ -122,8 +122,8 @@ function setLanguage(lang) {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    // Cargar idioma inicial
-    loadLanguage(currentLang);
+    // Cargar idioma inicial (textos e imagen "en construcción")
+    setLanguage(currentLang);
 
     const toggle = document.getElementById("langToggle");
     const menu = document.getElementById("langMenu");

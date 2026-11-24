@@ -21,9 +21,9 @@
  */
 
 const FALLBACK_LANG = 'es';
-// Ajusta esta ruta según dónde viva el archivo de Phaser respecto a /Lenguague/
-// Si el juego está en /prologo/index.html (un nivel adentro de la raíz), usa '../Lenguague/'
-const LOCALE_PATH = '../Lenguague/';
+// Ruta absoluta: funciona sin importar dónde viva el juego dentro del dominio
+// (hoy /beta/game/, servido por el Worker; los JSON siguen saliendo de GitHub Pages).
+const LOCALE_PATH = '/Language/';
 
 let prologoDict = null;
 

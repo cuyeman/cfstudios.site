@@ -9,7 +9,7 @@
 
     "bram_banner_kicker": "CAMPFIRE STUDIOS PRESENTS",
     "bram_banner_title": "BRAM'S FADING LIGHT",
-    "bram_banner_subtitle": "Play for free · Coming soon",
+    "bram_banner_subtitle": "Play for free",
     "bram_banner_button": "TRY THE PROLOGUE",
     "bram_banner_footer": "A narrative pixel art experience.",
     "nav_home": "Home",
@@ -82,7 +82,11 @@
     "contact_email_label": "Email Address",
     "contact_message_label": "Message / Report",
     "contact_submit_button": "Send Message",
-    "footer_legal": "© 2026 Desarrollos Tecnológicos CFStudios SpA. Santiago, Metropolitan Region, Chile."
+    "footer_legal": "© 2026 Desarrollos Tecnológicos CFStudios SpA. Santiago, Metropolitan Region, Chile.",
+    "consent_text": "We use Google Analytics cookies to understand how the site is used and improve it. They are only enabled if you accept; you can change your choice at any time from the footer.",
+    "consent_accept": "Accept",
+    "consent_reject": "Reject",
+    "consent_manage": "Cookie preferences"
   },
   "prologo": {
     "acto1_title": "ACT 1 — EDWIN'S VISIT",

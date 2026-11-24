@@ -1346,3 +1346,70 @@ footer {
         transition: none;
     }
 }
+
+/* Aviso de consentimiento de cookies (src/consent.js) */
+.consent-banner {
+    position: fixed;
+    left: 1rem;
+    right: 1rem;
+    bottom: 1rem;
+    z-index: 3000;
+    max-width: 720px;
+    margin: 0 auto;
+    padding: 1.25rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1.25rem;
+    background-color: var(--bg-surface-alt);
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    border-radius: var(--border-radius);
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+}
+
+.consent-banner[hidden] { display: none; }
+
+.consent-banner p {
+    flex: 1;
+    margin: 0;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--text-main);
+}
+
+.consent-actions {
+    display: flex;
+    gap: 0.75rem;
+    flex-shrink: 0;
+}
+
+/* Ambos botones del mismo tamaño: rechazar debe ser tan fácil como aceptar. */
+.consent-actions .btn {
+    padding: 0.6rem 1.25rem;
+    font-size: 0.9rem;
+    white-space: nowrap;
+}
+
+.consent-manage {
+    margin-top: 0.75rem;
+    padding: 0;
+    background: none;
+    border: none;
+    color: var(--text-muted);
+    font-family: var(--font-body);
+    font-size: 0.85rem;
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.consent-manage:hover,
+.consent-manage:focus-visible { color: var(--fire-amber); }
+
+@media (max-width: 640px) {
+    .consent-banner {
+        flex-direction: column;
+        align-items: stretch;
+        text-align: center;
+    }
+
+    .consent-actions .btn { flex: 1; }
+}

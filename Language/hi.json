@@ -9,7 +9,7 @@
 
     "bram_banner_kicker": "CAMPFIRE STUDIOS प्रस्तुत करता है",
     "bram_banner_title": "BRAM'S FADING LIGHT",
-    "bram_banner_subtitle": "मुफ़्त खेलें · जल्द आ रहा है",
+    "bram_banner_subtitle": "मुफ़्त खेलें",
     "bram_banner_button": "प्रस्तावना खेलें",
     "bram_banner_footer": "पिक्सेल आर्ट में एक कथात्मक अनुभव।",
     "nav_home": "होम",
@@ -82,7 +82,11 @@
     "contact_email_label": "ईमेल पता",
     "contact_message_label": "संदेश / रिपोर्ट",
     "contact_submit_button": "संदेश भेजें",
-    "footer_legal": "© 2026 Desarrollos Tecnológicos CFStudios SpA. सैंटियागो, मेट्रोपॉलिटन क्षेत्र, चिली।"
+    "footer_legal": "© 2026 Desarrollos Tecnológicos CFStudios SpA. सैंटियागो, मेट्रोपॉलिटन क्षेत्र, चिली।",
+    "consent_text": "हम यह समझने और साइट को बेहतर बनाने के लिए Google Analytics कुकीज़ का उपयोग करते हैं। ये केवल आपकी स्वीकृति के बाद ही सक्रिय होती हैं; आप फ़ुटर से कभी भी अपना निर्णय बदल सकते हैं।",
+    "consent_accept": "स्वीकार करें",
+    "consent_reject": "अस्वीकार करें",
+    "consent_manage": "कुकी प्राथमिकताएँ"
   },
   "prologo": {
     "acto1_title": "अधिनियम 1 — एडविन की यात्रा",
